@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devModel" value="true"></constant>
+	<constant name="struts.action.extension" value="do"></constant>
+
+
+	<package name="user" namespace="/user" extends="json-default">
+		<action name="login" class="com.liyuhao.action.AdminAction"
+			method="login">
+			<result name="success" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+			<result name="failure" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+			<result name="error">
+
+			</result>
+			<!-- 直接拦截所有异常 然后返回封装了异常信息的json 其他的给浏览器做处理。 -->
+			<exception-mapping result="success" exception="java.lang.Exception"></exception-mapping>
+		</action>
+	</package>
+</struts>    

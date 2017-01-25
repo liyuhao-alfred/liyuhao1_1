@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>edit</title>
+<script type="text/javascript" src="js/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="js/cookie_util.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var userName = getCookie("userName");
+		console.log(userName);
+		$('#user').html(userName);
+	});
+</script>
+</head>
+<body>
+	<h1>
+		登录成功,欢迎你<span id="user"></span>
+	</h1>
+</body>
